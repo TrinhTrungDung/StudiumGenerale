@@ -94,8 +94,6 @@ xUpper = np.multiply(maximum,1/lotSize)
 limit = tuple([tuple((0,i)) for i in xUpper])
 #Solver uses the "simplex" method
 result = linprog(c,A_ub=[lotSize],b_ub=[orderSize],bounds=limit)
-print(result.x)    
-
-
+print(result.x)
 
 
