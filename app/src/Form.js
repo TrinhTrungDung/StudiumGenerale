@@ -18,7 +18,19 @@ const styles = {
       color: blue500,
     },
 }
-  
+
+const download = function(data, csvName) {
+    const blob = new Blob([data],{type: 'text/csv'})
+    const url = window.URL.createObjectURL(blob)
+    const a = document.createElement('a')
+    a.setAttribute('hidden','')
+    a.setAttribute('href',url)
+    a.setAttribute('download',csvName+".csv")
+    document.body.appendChild(a)
+    a.click()
+    document.body.removeChild(a)
+}
+
 export default class Form extends React.Component{
 
     state = {
@@ -68,56 +80,56 @@ export default class Form extends React.Component{
     onSubmitCriteria = e => {
         e.preventDefault()
 
-        console.log(this.state.QoP + ","
-                + this.state.DoP + ","
-                + this.state.DoQ + ","
-                + this.state.PcoP + ","
-                + this.state.PcoQ + ","
-                + this.state.PcoD)
+        download(this.state.QoP + ","
+        + this.state.DoP + ","
+        + this.state.DoQ + ","
+        + this.state.PcoP + ","
+        + this.state.PcoQ + ","
+        + this.state.PcoD, "criteriaRank")
     }
 
     onSubmitPrice = e => {
         e.preventDefault()
 
-        console.log(this.state.PS2S1 + ","
-                + this.state.PS3S1 + ","
-                + this.state.PS3S2 + ","
-                + this.state.PS4S1 + ","
-                + this.state.PS4S2 + ","
-                + this.state.PS4S3)
+        download(this.state.PS2S1 + ","
+        + this.state.PS3S1 + ","
+        + this.state.PS3S2 + ","
+        + this.state.PS4S1 + ","
+        + this.state.PS4S2 + ","
+        + this.state.PS4S3str, "priceRank")
     }
 
     onSubmitQuality = e => {
         e.preventDefault()
 
-        console.log(this.state.QS2S1 + ","
-                + this.state.QS3S1 + ","
-                + this.state.QS3S2 + ","
-                + this.state.QS4S1 + ","
-                + this.state.QS4S2 + ","
-                + this.state.QS4S3)
+        download(this.state.QS2S1 + ","
+        + this.state.QS3S1 + ","
+        + this.state.QS3S2 + ","
+        + this.state.QS4S1 + ","
+        + this.state.QS4S2 + ","
+        + this.state.QS4S3, "qualityRank")        
     }
 
     onSubmitDelivery = e => {
         e.preventDefault()
 
-        console.log(this.state.DS2S1 + ","
-                + this.state.DS3S1 + ","
-                + this.state.DS3S2 + ","
-                + this.state.DS4S1 + ","
-                + this.state.DS4S2 + ","
-                + this.state.DS4S3)
+        download(this.state.DS2S1 + ","
+        + this.state.DS3S1 + ","
+        + this.state.DS3S2 + ","
+        + this.state.DS4S1 + ","
+        + this.state.DS4S2 + ","
+        + this.state.DS4S3, "deliveryRank")        
     }
 
     onSubmitProcess = e => {
         e.preventDefault()
 
-        console.log(this.state.PrS2S1 + ","
-                + this.state.PrS3S1 + ","
-                + this.state.PrS3S2 + ","
-                + this.state.PrS4S1 + ","
-                + this.state.PrS4S2 + ","
-                + this.state.PrS4S3)
+        download(this.state.PrS2S1 + ","
+        + this.state.PrS3S1 + ","
+        + this.state.PrS3S2 + ","
+        + this.state.PrS4S1 + ","
+        + this.state.PrS4S2 + ","
+        + this.state.PrS4S3, "processRank")        
     }
 
     render(){
@@ -415,9 +427,7 @@ export default class Form extends React.Component{
                             </form>
                         </div>
                 </SplitterLayout>
-            </SplitterLayout>
-                
+            </SplitterLayout>         
         )
     }
-    
 }
