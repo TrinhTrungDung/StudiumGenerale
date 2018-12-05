@@ -17,7 +17,7 @@ const styles = {
     },
 };
 
-export default class PriceForm extends React.Component {
+export default class ProcessForm extends React.Component {
 
   saveAndContinue = (event) => {
     event.preventDefault();
@@ -33,56 +33,56 @@ export default class PriceForm extends React.Component {
     const { values } = this.props;
     return (
       <div>
-        <p> Price Ranking </p>
+        <p> Process Ranking </p>
         <form onSubmit={this.saveAndContinue}>
           <TextField
-              name="ps2s1"
+              name="prs2s1"
               hintText="Enter value"
-              floatingLabelText="Price S1 per S2"
+              floatingLabelText="Process S1 per S2"
               floatingLabelStyle={styles.floatingLabelStyle}
               floatingLabelFocusStyle={styles.floatingLabelFocusStyle}
-              onChange={this.props.handleChange('ps2s1')}
-              defaultValue={values.ps2s1} /><br />
+              onChange={this.props.handleChange('prs2s1')}
+              defaultValue={values.prs2s1} /><br />
           <TextField
-              name = "ps3s1"
+              name = "pr3s1"
               hintText="Enter value"
-              floatingLabelText="Price S3 per S1"
+              floatingLabelText="Process S3 per S1"
               floatingLabelStyle={styles.floatingLabelStyle}
               floatingLabelFocusStyle={styles.floatingLabelFocusStyle}
-              onChange={this.props.handleChange('ps3s1')}
-              defaultValue={values.ps3s1} /><br />
+              onChange={this.props.handleChange('prs3s1')}
+              defaultValue={values.prs3s1} /><br />
           <TextField
-              name = "ps3s2"
+              name = "pr3s2"
               hintText="Enter value"
-              floatingLabelText="Price S3 per S2"
+              floatingLabelText="Process S3 per S2"
               floatingLabelStyle={styles.floatingLabelStyle}
               floatingLabelFocusStyle={styles.floatingLabelFocusStyle}
-              onChange={this.props.handleChange('ps3s2')}
-              defaultValue={values.ps3s2} /><br />
+              onChange={this.props.handleChange('prs3s2')}
+              defaultValue={values.prs3s2} /><br />
           <TextField
-              name = "ps4s1"
+              name = "pr4s1"
               hintText="Enter value"
-              floatingLabelText="Price S4 per S1"
+              floatingLabelText="Process S4 per S1"
               floatingLabelStyle={styles.floatingLabelStyle}
               floatingLabelFocusStyle={styles.floatingLabelFocusStyle}
-              onChange={this.props.handleChange('ps4s1')}
-              defaultValue={values.ps4s1} /><br />
+              onChange={this.props.handleChange('prs4s1')}
+              defaultValue={values.prs4s1} /><br />
           <TextField
-              name = "ps4s2"
+              name = "pr4s2"
               hintText="Enter value"
-              floatingLabelText="Price S4 per S2"
+              floatingLabelText="Process S4 per S2"
               floatingLabelStyle={styles.floatingLabelStyle}
               floatingLabelFocusStyle={styles.floatingLabelFocusStyle}
-              onChange={this.props.handleChange('ps4s2')}
-              defaultValue={values.ps4s2} /><br />
+              onChange={this.props.handleChange('prs4s2')}
+              defaultValue={values.prs4s2} /><br />
           <TextField
-              name = "ps4s3"
+              name = "pr4s3"
               hintText="Enter value"
-              floatingLabelText="Price S4 per S3"
+              floatingLabelText="Process S4 per S3"
               floatingLabelStyle={styles.floatingLabelStyle}
               floatingLabelFocusStyle={styles.floatingLabelFocusStyle}
-              onChange={this.props.handleChange('ps4s3')}
-              defaultValue={values.ps4s3} /><br />
+              onChange={this.props.handleChange('prs4s3')}
+              defaultValue={values.prs4s3} /><br />
 
           <br />
 

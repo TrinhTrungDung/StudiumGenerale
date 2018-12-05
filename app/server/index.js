@@ -3,7 +3,7 @@ const express = require('express');
 const app = express();
 const router = require('./routes/index');
 
-let port = 5000 || process.env.PORT;
+let port = 3000 || process.env.PORT;
 
 app.use(bodyParser.json());
 app.use((req, res, next) => {

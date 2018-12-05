@@ -32,9 +32,8 @@ const download = function(data, csvName) {
 }
 
 export default class Form extends React.Component{
-  constructor() {
-    super();
-    this.state = {
+
+    state = {
         QoP: "",
         DoP: "",
         DoQ: "",
@@ -70,8 +69,6 @@ export default class Form extends React.Component{
         PrS4S2: "",
         PrS4S3: "",
     }
-    this.onSubmitCriteria = this.onSubmitCriteria.bind(this);
-  }
 
     change = e => {
         this.setState({
@@ -79,29 +76,16 @@ export default class Form extends React.Component{
         })
     }
 
-
+    
     onSubmitCriteria = e => {
         e.preventDefault()
 
-        fetch('http://localhost:5000/criteria', {
-          mode: 'no-cors',
-          method: "POST",
-          headers: {
-            'Content-type': 'application/json'
-          }
-        })
-        .then((result) => {
-          console.log(result);
-        });
-
-        console.log(this.state);
-
-        // download(this.state.QoP + ","
-        // + this.state.DoP + ","
-        // + this.state.DoQ + ","
-        // + this.state.PcoP + ","
-        // + this.state.PcoQ + ","
-        // + this.state.PcoD, "criteriaRank")
+        download(this.state.QoP + ","
+        + this.state.DoP + ","
+        + this.state.DoQ + ","
+        + this.state.PcoP + ","
+        + this.state.PcoQ + ","
+        + this.state.PcoD, "criteriaRank")
     }
 
     onSubmitPrice = e => {
@@ -112,7 +96,7 @@ export default class Form extends React.Component{
         + this.state.PS3S2 + ","
         + this.state.PS4S1 + ","
         + this.state.PS4S2 + ","
-        + this.state.PS4S3str, "priceRank")
+        + this.state.PS4S3, "priceRank")
     }
 
     onSubmitQuality = e => {
@@ -123,7 +107,7 @@ export default class Form extends React.Component{
         + this.state.QS3S2 + ","
         + this.state.QS4S1 + ","
         + this.state.QS4S2 + ","
-        + this.state.QS4S3, "qualityRank")
+        + this.state.QS4S3, "qualityRank")        
     }
 
     onSubmitDelivery = e => {
@@ -134,7 +118,7 @@ export default class Form extends React.Component{
         + this.state.DS3S2 + ","
         + this.state.DS4S1 + ","
         + this.state.DS4S2 + ","
-        + this.state.DS4S3, "deliveryRank")
+        + this.state.DS4S3, "deliveryRank")        
     }
 
     onSubmitProcess = e => {
@@ -145,13 +129,13 @@ export default class Form extends React.Component{
         + this.state.PrS3S2 + ","
         + this.state.PrS4S1 + ","
         + this.state.PrS4S2 + ","
-        + this.state.PrS4S3, "processRank")
+        + this.state.PrS4S3, "processRank")        
     }
 
     render(){
         return (
             <SplitterLayout primaryIndex={1} secondaryInitialSize={270}>
-                <div>
+                <div> 
                     <p> Criteria Ranking </p>
                     <form>
                         <TextField
@@ -201,17 +185,17 @@ export default class Form extends React.Component{
                             floatingLabelStyle={styles.floatingLabelStyle}
                             floatingLabelFocusStyle={styles.floatingLabelFocusStyle}
                             value={this.state.PcoD}
-                            onChange={e => this.change(e)}/><br />
+                            onChange={e => this.change(e)}/><br /> 
 
                         <br />
-
+            
                         {/* <button onClick={e => this.onSubmit(e)}> Create criteriaRank </button> */}
                         <button onClick={e=> this.onSubmitCriteria(e)}> Create criteriaRank</button>
                     </form>
                 </div>
                 <SplitterLayout secondaryInitialSize={270}>
                     <SplitterLayout secondaryInitialSize={540}>
-                        <div>
+                        <div> 
                         <p> Price Ranking </p>
                         <form>
                             <TextField
@@ -261,15 +245,15 @@ export default class Form extends React.Component{
                                 floatingLabelStyle={styles.floatingLabelStyle}
                                 floatingLabelFocusStyle={styles.floatingLabelFocusStyle}
                                 value={this.state.PS4S3}
-                                onChange={e => this.change(e)}/><br />
+                                onChange={e => this.change(e)}/><br /> 
 
                             <br />
-
+                
                             <button onClick={e => this.onSubmitPrice(e)}> Create priceRank </button>
                         </form>
                         </div>
                         <SplitterLayout secondaryInitialSize={270}>
-                            <div>
+                            <div> 
                                 <p> Quality Ranking </p>
                                 <form>
                                     <TextField
@@ -319,14 +303,14 @@ export default class Form extends React.Component{
                                         floatingLabelStyle={styles.floatingLabelStyle}
                                         floatingLabelFocusStyle={styles.floatingLabelFocusStyle}
                                         value={this.state.QS4S3}
-                                        onChange={e => this.change(e)}/><br />
+                                        onChange={e => this.change(e)}/><br /> 
 
                                     <br />
-
+                        
                                     <button onClick={e => this.onSubmitQuality(e)}> Create qualityRank </button>
                                 </form>
                             </div>
-                            <div>
+                            <div> 
                                 <p> Delivery Consistency Ranking </p>
                                 <form>
                                     <TextField
@@ -376,16 +360,16 @@ export default class Form extends React.Component{
                                         floatingLabelStyle={styles.floatingLabelStyle}
                                         floatingLabelFocusStyle={styles.floatingLabelFocusStyle}
                                         value={this.state.DS4S3}
-                                        onChange={e => this.change(e)}/><br />
+                                        onChange={e => this.change(e)}/><br /> 
 
                                     <br />
-
+                        
                                     <button onClick={e => this.onSubmitDelivery(e)}> Create deliveryRank </button>
                                 </form>
                             </div>
                         </SplitterLayout>
                     </SplitterLayout>
-                        <div>
+                        <div> 
                             <p> Process Capability Ranking </p>
                             <form>
                                     <TextField
@@ -435,15 +419,15 @@ export default class Form extends React.Component{
                                         floatingLabelStyle={styles.floatingLabelStyle}
                                         floatingLabelFocusStyle={styles.floatingLabelFocusStyle}
                                         value={this.state.PrS4S3}
-                                        onChange={e => this.change(e)}/><br />
+                                        onChange={e => this.change(e)}/><br /> 
 
                                     <br />
-
+                        
                                     <button onClick={e => this.onSubmitProcess(e)}> Create processRank </button>
                             </form>
                         </div>
                 </SplitterLayout>
-            </SplitterLayout>
+            </SplitterLayout>         
         )
     }
 }
