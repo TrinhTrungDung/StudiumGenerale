@@ -148,7 +148,7 @@ export default class MainForm extends React.Component {
                         prevStep={this.prevStep}
                         values={values} />
       case 8:
-        return <Success />
+        return <Success values={values}/>
       default:
 
     }

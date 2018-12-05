@@ -1,6 +1,6 @@
 import React from 'react';
 
-const url = "http://localhost:3000";
+const url = "http://localhost:5000";
 
 function postSuppliersData(data) {
   
@@ -152,6 +152,7 @@ export default class Confirmation extends React.Component {
     }} = this.props;
   
     console.log(this.props.values);
+    console.log(qop);
 
     return (
       <div>
