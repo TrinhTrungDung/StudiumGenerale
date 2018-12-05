@@ -59,12 +59,8 @@ export default class MainForm extends React.Component {
     prs3s2: "",
     prs4s1: "",
     prs4s2: "",
-    prs4s3: "",
+    prs4s3: ""
 
-    desiredS1: "",
-    desiredS2: "",
-    desiredS3: "",
-    desiredS4: ""
   };
 
   nextStep = () => {
@@ -96,8 +92,7 @@ export default class MainForm extends React.Component {
             ps2s1, ps3s1, ps3s2, ps4s1, ps4s2, ps4s3,
             qs2s1, qs3s1, qs3s2, qs4s1, qs4s2, qs4s3,
             ds2s1, ds3s1, ds3s2, ds4s1, ds4s2, ds4s3,
-            prs2s1, prs3s1, prs3s2, prs4s1, prs4s2, prs4s3,
-            desiredS1, desiredS2, desiredS3, desiredS4
+            prs2s1, prs3s1, prs3s2, prs4s1, prs4s2, prs4s3
           } = this.state;
     const values = {  order,
                     s1, s2, s3, s4,
@@ -106,8 +101,7 @@ export default class MainForm extends React.Component {
                     ps2s1, ps3s1, ps3s2, ps4s1, ps4s2, ps4s3,
                     qs2s1, qs3s1, qs3s2, qs4s1, qs4s2, qs4s3,
                     ds2s1, ds3s1, ds3s2, ds4s1, ds4s2, ds4s3,
-                    prs2s1, prs3s1, prs3s2, prs4s1, prs4s2, prs4s3,
-                    desiredS1, desiredS2, desiredS3, desiredS4
+                    prs2s1, prs3s1, prs3s2, prs4s1, prs4s2, prs4s3
                   };
 
     switch (step) {
@@ -128,6 +122,7 @@ export default class MainForm extends React.Component {
                         prevStep={this.prevStep}
                         handleChange={this.handleChange}
                         values={values} />
+
       case 4:
         return <CriteriaForm
                         nextStep={this.nextStep}

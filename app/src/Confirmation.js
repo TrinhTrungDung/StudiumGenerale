@@ -1,6 +1,6 @@
 import React from 'react';
 
-const url = "http://localhost:5000";
+const url = "http://localhost:3000";
 
 function postDataToServer(data, route) {
   fetch(`${url}/${route}`, {
@@ -22,6 +22,54 @@ function postResultToServer() {
     }
   })
   .then((res) => console.log('executing python scripts'))
+  .catch(err => console.log(err));
+}
+
+function postPriceData(data){
+  fetch(`${url}/price`, {
+    method: 'post',
+    headers: {
+      'Content-type': 'application/json'
+    },
+    body: JSON.stringify(data)
+  })
+  .then((res) => console.log("fawefwea"))
+  .catch(err => console.log(err));
+}
+
+function postQualityData(data){
+  fetch(`${url}/quality`, {
+    method: 'post',
+    headers: {
+      'Content-type': 'application/json'
+    },
+    body: JSON.stringify(data)
+  })
+  .then((res) => console.log("fawefwea"))
+  .catch(err => console.log(err));
+}
+
+function postDeliveryData(data){
+  fetch(`${url}/delivery`, {
+    method: 'post',
+    headers: {
+      'Content-type': 'application/json'
+    },
+    body: JSON.stringify(data)
+  })
+  .then((res) => console.log("fawefwea"))
+  .catch(err => console.log(err));
+}
+
+function postProcessData(data){
+  fetch(`${url}/process`, {
+    method: 'post',
+    headers: {
+      'Content-type': 'application/json'
+    },
+    body: JSON.stringify(data)
+  })
+  .then((res) => console.log("fawefwea"))
   .catch(err => console.log(err));
 }
 

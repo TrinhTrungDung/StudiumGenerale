@@ -43,13 +43,12 @@ router.route('/criteria')
       });
     })
     .post((req, res, next) => {
-      fs.writeFile("../input/criteriaRank.csv",
+      fs.writeFile("../../input/criteriaRank.csv",
        `${req.body.qop},${req.body.dop},${req.body.doq},${req.body.pcop},${req.body.pcoq},${req.body.pcod}`,
        (err) => {
          if (err) return console.log(err);
-         console.log("Saved file criteriaRank.csv");
-       }
-     );
+         console.log("Saved criteriaRank.csv");
+       });
       res.json({
         qop: req.body.qop,
         dop: req.body.dop,
