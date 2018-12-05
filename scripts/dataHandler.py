@@ -10,6 +10,9 @@ import csv
 from fractions import Fraction
 import numpy as np
 
+def writeResultToCsvFile(result, filePath):
+    result.tofile(filePath, sep=",")
+
 def readRankingDataFromCsvFile(filePath):
     """
     Read data from a csv formatted file

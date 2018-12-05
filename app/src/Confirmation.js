@@ -2,19 +2,26 @@ import React from 'react';
 
 const url = "http://localhost:5000";
 
-function postSuppliersData(data) {
-  
-}
-
-function postCriteriaInfo(data) {
-  fetch(`${url}/criteria`, {
+function postDataToServer(data, route) {
+  fetch(`${url}/${route}`, {
     method: 'post',
     headers: {
       'Content-type': 'application/json'
     },
     body: JSON.stringify(data)
   })
-  .then((res) => console.log("fawefwea"))
+  .then((res) => console.log(`send ${route} to server`))
+  .catch(err => console.log(err));
+}
+
+function postResultToServer() {
+  fetch(`${url}/result`, {
+    method: 'post',
+    headers: {
+      'Content-type': 'application/json'
+    }
+  })
+  .then((res) => console.log('executing python scripts'))
   .catch(err => console.log(err));
 }
 
@@ -69,6 +76,7 @@ function postProcessData(data){
 export default class Confirmation extends React.Component {
   saveAndContinue = (event) => {
     var suppliersData = {
+      order: this.props.values.order,
       s1: this.props.values.s1,
       s2: this.props.values.s2,
       s3: this.props.values.s3,
@@ -76,8 +84,7 @@ export default class Confirmation extends React.Component {
       s1m: this.props.values.s1m,
       s2m: this.props.values.s2m,
       s3m: this.props.values.s3m,
-      s4m: this.props.values.s4m,
-      order: this.props.values.order
+      s4m: this.props.values.s4m
     };
 
     var criteriaData = {
@@ -126,12 +133,13 @@ export default class Confirmation extends React.Component {
     }
 
     // POST data to backend server
-    postSuppliersData(suppliersData);
-    postCriteriaInfo(criteriaData);
-    postPriceData(priceData);
-    postQualityData(qualityData);
-    postDeliveryData(deliveryData);
-    postProcessData(processData);
+    postDataToServer(suppliersData, 'suppliers');
+    postDataToServer(criteriaData, 'criteria');
+    postDataToServer(priceData, 'price');
+    postDataToServer(qualityData, 'quality');
+    postDataToServer(deliveryData, 'delivery');
+    postDataToServer(processData, 'process');
+    postResultToServer();
 
     event.preventDefault();
     this.props.nextStep();
@@ -143,6 +151,7 @@ export default class Confirmation extends React.Component {
   }
 
   render() {
+<<<<<<< HEAD
     const {values :{ 
       qop, dop, doq, pcop, pcoq, pcod,
       ps2s1, ps3s1, ps3s2, ps4s1, ps4s2, ps4s3,
@@ -153,9 +162,21 @@ export default class Confirmation extends React.Component {
   
     console.log(this.props.values);
     console.log(qop);
+=======
+    const { values: {  order,
+                    s1, s2, s3, s4,
+                    s1m, s2m, s3m, s4m,
+                    qop, dop, doq, pcop, pcoq, pcod,
+                    ps2s1, ps3s1, ps3s2, ps4s1, ps4s2, ps4s3,
+                    qs2s1, qs3s1, qs3s2, qs4s1, qs4s2, qs4s3,
+                    ds2s1, ds3s1, ds3s2, ds4s1, ds4s2, ds4s3,
+                    prs2s1, prs3s1, prs3s2, prs4s1, prs4s2, prs4s3
+                  } } = this.props;
+>>>>>>> 19b68a7eb0e0800b503ab36e37c66ea6b8ddee52
 
     return (
       <div>
+      <button onClick={this.goBack}>Back</button>
       <button onClick={this.saveAndContinue}>Confirm</button>
       </div>
     );

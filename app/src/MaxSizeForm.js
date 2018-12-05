@@ -17,7 +17,7 @@ const styles = {
     },
 };
 
-export default class SupplierSizeForm extends React.Component {
+export default class MaxSizeForm extends React.Component {
 
   saveAndContinue = (event) => {
     event.preventDefault();
@@ -33,40 +33,40 @@ export default class SupplierSizeForm extends React.Component {
     const { values } = this.props;
     return (
       <div>
-        <p> Suppliers' Lot Sizes </p>
+        <p> Maximum Lot Sizes </p>
         <form onSubmit={this.saveAndContinue}>
           <TextField
-              name="s1"
+              name="s1m"
               hintText="Enter value"
               floatingLabelText="S1's lot size"
               floatingLabelStyle={styles.floatingLabelStyle}
               floatingLabelFocusStyle={styles.floatingLabelFocusStyle}
-              onChange={this.props.handleChange('s1')}
-              defaultValue={values.s1} /><br />
+              onChange={this.props.handleChange('s1m')}
+              defaultValue={values.s1m} /><br />
           <TextField
-              name="s2"
+              name="s2m"
               hintText="Enter value"
               floatingLabelText="S2's lot size"
               floatingLabelStyle={styles.floatingLabelStyle}
               floatingLabelFocusStyle={styles.floatingLabelFocusStyle}
-              onChange={this.props.handleChange('s2')}
-              defaultValue={values.s2} /><br />
+              onChange={this.props.handleChange('s2m')}
+              defaultValue={values.s2m} /><br />
           <TextField
-              name = "s3"
+              name = "s3m"
               hintText="Enter value"
               floatingLabelText="S3's lot size"
               floatingLabelStyle={styles.floatingLabelStyle}
               floatingLabelFocusStyle={styles.floatingLabelFocusStyle}
-              onChange={this.props.handleChange('s3')}
-              defaultValue={values.s3} /><br />
+              onChange={this.props.handleChange('s3m')}
+              defaultValue={values.s3m} /><br />
           <TextField
-              name = "s4"
+              name = "s4m"
               hintText="Enter value"
               floatingLabelText="S4's lot size"
               floatingLabelStyle={styles.floatingLabelStyle}
               floatingLabelFocusStyle={styles.floatingLabelFocusStyle}
-              onChange={this.props.handleChange('s4')}
-              defaultValue={values.s4} /><br />
+              onChange={this.props.handleChange('s4m')}
+              defaultValue={values.s4m} /><br />
 
           <br />
 
