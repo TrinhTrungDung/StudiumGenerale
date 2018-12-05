@@ -148,8 +148,6 @@ export default class MainForm extends React.Component {
                         handleChange={this.handleChange}
                         values={values} />
       case 8:
-<<<<<<< HEAD
-=======
         return <ProcessForm
                         nextStep={this.nextStep}
                         prevStep={this.prevStep}
@@ -161,7 +159,6 @@ export default class MainForm extends React.Component {
                         prevStep={this.prevStep}
                         values={values} />
       case 10:
->>>>>>> 19b68a7eb0e0800b503ab36e37c66ea6b8ddee52
         return <Success values={values}/>
       default:
 

@@ -7,11 +7,8 @@
     "express": "^4.16.4",
     "fractional": "^1.0.0",
     "material-ui": "^0.20.2",
-<<<<<<< HEAD
     "mathjs": "^5.3.1",
-=======
     "nodemon": "^1.18.7",
->>>>>>> 19b68a7eb0e0800b503ab36e37c66ea6b8ddee52
     "react": "^16.6.3",
     "react-basic-table": "^1.0.14",
     "react-dom": "^16.6.3",
