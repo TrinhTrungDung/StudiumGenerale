@@ -36,4 +36,5 @@ if __name__ == "__main__":
     xUpper = np.multiply(maximumSize, 1 / lotSize)
     limit = tuple([tuple((0, i)) for i in xUpper])
     result = linprog(c, A_ub=[lotSize], b_ub=[orderSize], bounds=limit)
+    dataHandler.writeResultToCsvFile(result.x, "../output/result.csv")
     print(result.x)

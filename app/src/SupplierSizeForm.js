@@ -24,6 +24,11 @@ export default class SupplierSizeForm extends React.Component {
     this.props.nextStep();
   }
 
+  goBack = (event) => {
+    event.preventDefault();
+    this.props.prevStep();
+  }
+
   render() {
     const { values } = this.props;
     return (
@@ -65,6 +70,7 @@ export default class SupplierSizeForm extends React.Component {
 
           <br />
 
+          <button onClick={this.goBack}>Back</button>
           <button onClick={this.saveAndContinue}>Save And Continue</button>
         </form>
       </div>
