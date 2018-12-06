@@ -12,7 +12,7 @@ function printRatio (value) {
 function generateRow(array, columns){
   var rows = []
   for (var i = 0; i < 4; i++ ){
-    
+
     var item = [
       <span style={{fontWeight: 'bold'}} >{columns[i]}</span>,
       <span>{array[i*4]}</span>,
@@ -33,7 +33,7 @@ function generateFullArray(temparray){
     generateDecimalTextFromFraction(temparray[2]),
     temparray[0],
     "1",
-    generateDecimalTextFromFraction(temparray[3]), 
+    generateDecimalTextFromFraction(temparray[3]),
     generateDecimalTextFromFraction(temparray[4]),
     temparray[1],
     temparray[3],
@@ -68,16 +68,16 @@ function postDataToServer(data, route) {
   .catch(err => console.log(err));
 }
 
-function postResultToServer() {
-  fetch(`${url}/result`, {
-    method: 'post',
-    headers: {
-      'Content-type': 'application/json'
-    }
-  })
-  .then((res) => console.log('executing python scripts'))
-  .catch(err => console.log(err));
-}
+// function postResultToServer() {
+//   fetch(`${url}/result`, {
+//     method: 'post',
+//     headers: {
+//       'Content-type': 'application/json'
+//     }
+//   })
+//   .then((res) => console.log('executing python scripts'))
+//   .catch(err => console.log(err));
+// }
 
 function postPriceData(data){
   fetch(`${url}/price`, {
@@ -193,7 +193,7 @@ export default class Confirmation extends React.Component {
     postDataToServer(qualityData, 'quality');
     postDataToServer(deliveryData, 'delivery');
     postDataToServer(processData, 'process');
-    postResultToServer();
+    // postResultToServer();
 
     event.preventDefault();
     this.props.nextStep();
@@ -203,6 +203,17 @@ export default class Confirmation extends React.Component {
     event.preventDefault();
     this.props.prevStep();
   }
+
+  // componentWillMount() {
+  //   fetch(`${url}/result`, {
+  //     method: 'post',
+  //     headers: {
+  //       'Content-type': 'application/json'
+  //     }
+  //   })
+  //   .then((res) => console.log('executing python scripts'))
+  //   .catch(err => console.log(err));
+  // }
 
   render() {
 
@@ -223,7 +234,7 @@ export default class Confirmation extends React.Component {
       this.props.values.ps4s2,
       this.props.values.ps4s3
     ]);
-    
+
     var qualityObject = generateFullArray([
       this.props.values.qs2s1,
       this.props.values.qs3s1,
@@ -261,7 +272,7 @@ export default class Confirmation extends React.Component {
     var deliveryColumns1 = ['S1','S2','S3','S4'];
     var processColumns = ['Process','S1','S2','S3','S4'];
     var processColumns1 = ['S1','S2','S3','S4'];
-   
+
     var criteriaRows = generateRow(criteriaObject,criteriaColumns1);
     var priceRows = generateRow(priceObject,priceColumns1);
     var qualityRows = generateRow(qualityObject,qualityColumns1);
@@ -280,18 +291,18 @@ export default class Confirmation extends React.Component {
 
 
     return (
-    
+
         <div>
-        <button onClick={this.goBack}>Back</button>
-        <button onClick={this.saveAndContinue}>Confirm</button>
         <ReactBasicTable columns={criteriaColumns} rows={criteriaRows} />
         <ReactBasicTable columns={priceColumns} rows={priceRows} />
         <ReactBasicTable columns={qualityColumns} rows={qualityRows} />
         <ReactBasicTable columns={deliveryColumns} rows={deliveryRows} />
         <ReactBasicTable columns={processColumns} rows={processRows} />
+        <button onClick={this.goBack}>Back</button>
+        <button onClick={this.saveAndContinue}>Confirm</button>
         </div>
-      
-      
+
+
     );
   }
 }

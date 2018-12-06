@@ -10,7 +10,7 @@ export default class Success extends React.Component {
     };
   }
 
-  componentWillMount() {
+  componentDidMount() {
     fetch(`${url}/result`)
     .then(res => res.json())
     .then(data => this.setState({ data }))
@@ -18,8 +18,9 @@ export default class Success extends React.Component {
   }
 
   render() {
-    
+
     if (this.state.data !== null) {
+      console.log(this.state.data);
       var { desiredS1, desiredS2, desiredS3, desiredS4 } = this.state.data;
       return (
         <div>
@@ -39,7 +40,5 @@ export default class Success extends React.Component {
     }
   }
 
-  
+
 }
-
-

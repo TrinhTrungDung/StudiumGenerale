@@ -43,7 +43,7 @@ router.route('/criteria')
       });
     })
     .post((req, res, next) => {
-      fs.writeFile("../../input/criteriaRank.csv",
+      fs.writeFile("../input/criteriaRank.csv",
        `${req.body.qop},${req.body.dop},${req.body.doq},${req.body.pcop},${req.body.pcoq},${req.body.pcod}`,
        (err) => {
          if (err) return console.log(err);
@@ -153,6 +153,7 @@ router.route('/process')
 
 router.route('/result')
     .get((req, res, next) => {
+      shell.exec('../build.sh');
       var contents = fs.readFileSync("../output/result.csv", "utf8");
       var orderLots = contents.split(',');
       res.json({
@@ -160,21 +161,6 @@ router.route('/result')
         desiredS2: orderLots[1],
         desiredS3: orderLots[2],
         desiredS4: orderLots[3]
-      });
-      // fs.readFile("../output/result.csv", "utf8", (err, contents) => {
-      //   var orderLots = contents.split(',');
-      //   res.json({
-      //     desiredS1: orderLots[0],
-      //     desiredS2: orderLots[1],
-      //     desiredS3: orderLots[2],
-      //     desiredS4: orderLots[3]
-      //   });
-      // });
-    })
-    .post((req, res, next) => {
-      shell.exec('../build.sh');
-      res.json({
-        success: true
       });
     });
 
