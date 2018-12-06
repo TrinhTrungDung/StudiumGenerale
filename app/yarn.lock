@@ -2135,6 +2135,11 @@ class-utils@^0.3.5:
     isobject "^3.0.0"
     static-extend "^0.1.1"
 
+classnames@^2.1.5:
+  version "2.2.6"
+  resolved "https://registry.yarnpkg.com/classnames/-/classnames-2.2.6.tgz#43935bffdd291f326dad0a205309b38d00f650ce"
+  integrity sha512-JR/iSQOSt+LQIWwrwEzJ9uk0xfN3mTVYMwt1Ir5mUcSN6pU+V4zQFFaJsclJbPuAUQH+yfWef6tm7l1quW3C8Q==
+
 clean-css@4.2.x:
   version "4.2.1"
   resolved "https://registry.yarnpkg.com/clean-css/-/clean-css-4.2.1.tgz#2d411ef76b8569b6d0c84068dabe85b0aa5e5c17"
@@ -3953,6 +3958,14 @@ fraction.js@4.0.11:
   resolved "https://registry.yarnpkg.com/fraction.js/-/fraction.js-4.0.11.tgz#f82474349f7a198b6ad8d713d65621302a0e6f58"
   integrity sha512-wyQd1A06dTom7vTkf8OsnqXNi5XjleeaDFrvQX3SDIyMsVN1eb8KSGH3fsckF5FMlSWBrMfDCcJWVf99rXbf/g==
 
+<<<<<<< HEAD
+=======
+fractional@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/fractional/-/fractional-1.0.0.tgz#dab167a2f9f804cf9038bddf47aa9ba7f207eabc"
+  integrity sha1-2rFnovn4BM+QOL3fR6qbp/IH6rw=
+
+>>>>>>> 879771032302d05e1a64f58bbd817fae035ce96f
 fragment-cache@^0.2.1:
   version "0.2.1"
   resolved "https://registry.yarnpkg.com/fragment-cache/-/fragment-cache-0.2.1.tgz#4290fad27f13e89be7f33799c6bc5a0abfff0d19"
@@ -6417,6 +6430,11 @@ nanomatch@^1.2.9:
     snapdragon "^0.8.1"
     to-regex "^3.0.1"
 
+natsort@^1.0.6:
+  version "1.0.6"
+  resolved "https://registry.yarnpkg.com/natsort/-/natsort-1.0.6.tgz#fd4f4631fac7f5885aa77f71fd55a2742d94eb32"
+  integrity sha1-/U9GMfrH9Yhap39x/VWidC2U6zI=
+
 natural-compare@^1.4.0:
   version "1.4.0"
   resolved "https://registry.yarnpkg.com/natural-compare/-/natural-compare-1.4.0.tgz#4abebfeed7541f2c27acfb29bdbbd15c8d5ba4f7"
@@ -8024,6 +8042,15 @@ react-app-polyfill@^0.1.3:
     promise "8.0.2"
     raf "3.4.0"
     whatwg-fetch "3.0.0"
+
+react-basic-table@^1.0.14:
+  version "1.0.14"
+  resolved "https://registry.yarnpkg.com/react-basic-table/-/react-basic-table-1.0.14.tgz#bce337581835fee950eacfeee188e0f6e8aae8bd"
+  integrity sha1-vOM3WBg1/ulQ6s/u4Yjg9uiq6L0=
+  dependencies:
+    classnames "^2.1.5"
+    lodash "^4.17.4"
+    natsort "^1.0.6"
 
 react-dev-utils@^6.1.1:
   version "6.1.1"

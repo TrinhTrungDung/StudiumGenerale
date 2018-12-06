@@ -18,9 +18,9 @@ export default class Success extends React.Component {
   }
 
   render() {
+    
     if (this.state.data !== null) {
       var { desiredS1, desiredS2, desiredS3, desiredS4 } = this.state.data;
-      console.log(this.state.data);
       return (
         <div>
           <p> Results </p>
@@ -38,4 +38,8 @@ export default class Success extends React.Component {
       );
     }
   }
+
+  
 }
+
+
