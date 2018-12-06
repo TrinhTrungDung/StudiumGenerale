@@ -6,6 +6,7 @@
     "body-parser": "^1.18.3",
     "express": "^4.16.4",
     "material-ui": "^0.20.2",
+    "mathjs": "^5.3.1",
     "nodemon": "^1.18.7",
     "react": "^16.6.3",
     "react-dom": "^16.6.3",
