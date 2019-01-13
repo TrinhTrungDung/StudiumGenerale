@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-Created on Mon Jan  7 15:28:12 2019
+Modified on Sun Jan  13 13:14:12 2019
 
 @author: root
 """
@@ -105,7 +105,7 @@ def generate(xUpper):
         gene =[]
         for i in range(4):
             gene.append(random.randint(0,xUpper[i]))
-        if (constraint(gene)>0):
+        if (constraint(gene) > -1):
             trigger = False
     return gene
 #    print(str(newPopulation[i])+"~"+str(constraint(newPopulation[i])))
@@ -121,7 +121,7 @@ def selectMatingPool(pop,fitness,numParents):
     for i in range(numParents):
         maxFitnessIndex = np.where(fitness == np.max(fitness))
         maxFitnessIndex = maxFitnessIndex[0][0]
-        parents[numParents-1,:] = pop[maxFitnessIndex,:]
+        parents[i, :] = pop[maxFitnessIndex,:]
         fitness[maxFitnessIndex]=-999999999
     return parents
 #Define the crossover strategy
@@ -163,7 +163,7 @@ def mutation(offspring_crossover,xUpper):
                 elif (offspring_crossover[idx,i] > xUpper[i]):
                     offspring_crossover[idx,i] = xUpper[i]
                     ###
-            if (constraint(offspring_crossover[idx])>0):
+            if (constraint(offspring_crossover[idx]) > -1):
                 triggerCheck=False
             else:
                 triggerSwitch=True
