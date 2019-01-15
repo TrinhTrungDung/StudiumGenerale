@@ -90,13 +90,13 @@ xLower = np.zeros((len(lotSize)),int)
 #   final score on the step above 
 mainArgs=tuple([np.multiply(finalScore,lotSize),
           np.append(lotSize,np.array([orderSize]))])
+          
 def objective(x,*args):
     target = 0
     objectiveArgs, conArgs = args
     for i in range(len(x)):
         target-=x[i]*objectiveArgs[i]
     return target
-
 
 def constraint(x,*args):
     objectiveArgs, conArgs = args
@@ -105,6 +105,8 @@ def constraint(x,*args):
         target-=x[i]*conArgs[i]
     return target
 #Use PSO to optimize
-xopt, fopt = pso(objective,xLower,xUpper,ieqcons=[constraint],args=mainArgs)
+xopt, fopt = pso(objective,xLower,xUpper,ieqcons=[constraint],args=mainArgs,
+                swarmsize = 1000,
+                maxiter = 50)
 #Output result
 print('Order specification: '+ str(np.rint(xopt)))
